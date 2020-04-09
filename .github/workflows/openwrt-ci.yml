@@ -42,6 +42,93 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           
+          
+      - name: 主题0
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/Aslin-Ameng/OpenWrt-luci-theme-material.git
+          
+          
+      - name: 主题1
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/LuttyYang/luci-theme-material.git
+          
+          
+      - name: 主题2
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/apollo-ng/luci-theme-darkmatter.git
+          
+          
+      - name: 主题3
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/rosywrt/luci-theme-rosy.git
+          
+          
+      - name: 主题4
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+          
+          
+      - name: 主题5
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/AngSanley/luci-theme-material2.git
+          
+          
+      - name: 主题6
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/Aeneon/luci-theme-nightstrap.git
+          
+          
+      - name: 插件0
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/frainzy1477/luci-app-clash.git
+          
+          
+      - name: 插件1
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/maxlicheng/luci-app-unblockmusic.git
+          
+          
+      - name: 插件2
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
+          
+          
+      - name: 插件3
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/giaulo/luci-app-filebrowser.git
 
           # sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/hostpkg /mnt/openwrt/dl /mnt/openwrt/feeds /mnt/openwrt/staging_dir
           # ln -s /mnt/openwrt/bin ./bin
@@ -186,6 +273,10 @@ jobs:
           CONFIG_PACKAGE_luci-app-vnstat=y
           CONFIG_PACKAGE_luci-app-shairplay=y
           CONFIG_PACKAGE_luci-app-nlbwmon=y
+          CONFIG_PACKAGE_luci-app-clash=y
+          CONFIG_PACKAGE_luci-app-adguardhome=y
+          CONFIG_PACKAGE_luci-app-unblockmusic=y
+          CONFIG_PACKAGE_luci-app-filebrowser=y
           EOF
 
 
@@ -193,6 +284,13 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
+          CONFIG_PACKAGE_luci-theme-material=y
+          CONFIG_PACKAGE_luci-theme-material=y
+          CONFIG_PACKAGE_luci-theme-darkmatter=y
+          CONFIG_PACKAGE_luci-theme-rosy=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
+          CONFIG_PACKAGE_luci-theme-material2=y
+          CONFIG_PACKAGE_luci-theme-nightstrap=y
           EOF
 
           # 常用软件包:
